@@ -1,0 +1,23 @@
+/* find the root of a number using the bisection method on Python 3 */
+
+
+def func(x):
+    return x*x - 4
+def bisection(a,b):
+    if(func(a)*func(b)>=0):
+        print("Wrong input")
+        return
+    
+    c = a
+    while((b-a)>0.01):
+        c=(a+b)/2
+        if(func(c)==0):
+           break
+        if(func(a)*func(c)<0):
+           b=c
+        else:
+         a = c
+    
+        
+    print("the root of the number is","%.4f"%c)
+bisection(1,5)
